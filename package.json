@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/release-please/understand-react/issues"
   },
-  "homepage": "https://github.com/release-please/understand-react#readme"
+  "homepage": "https://github.com/release-please/understand-react#readme",
+  "devDependencies": {
+    "parcel": "^2.3.2",
+    "typescript": "^4.6.2"
+  }
 }
