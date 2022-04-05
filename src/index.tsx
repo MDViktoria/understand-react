@@ -1,22 +1,8 @@
+import { Component } from '../@types/react'
+import { React } from './react/react'
 import { ReactDOM } from './react/react-dom'
 
-const React = {
-  createElement (tag, props, ...children) {
-    if (typeof tag === 'function') {
-      return tag({ ...props, children })
-    }
-
-    return {
-      tag,
-      props: {
-        ...props,
-        children
-      }
-    }
-  }
-}
-
-const App = () => (
+const App: Component = () => (
   <div>
     <header>Header</header>
     <main>
