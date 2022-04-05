@@ -1,3 +1,5 @@
+import { ReactDOM } from './react/react-dom'
+
 const React = {
   createElement (tag, props, ...children) {
     if (typeof tag === 'function') {
@@ -11,33 +13,6 @@ const React = {
         children
       }
     }
-  }
-}
-
-const ReactDOM = {
-  render (element, container) {
-    if (typeof element === 'string' || typeof element === 'number') {
-      container.appendChild(document.createTextNode(String(element)))
-      return
-    }
-
-    const { tag, props } = element
-    const domElement = document.createElement(tag)
-
-    if (props.children) {
-      props.children.forEach(child => {
-        ReactDOM.render(child, domElement)
-      })
-    }
-
-    for (const prop in props) {
-      if (prop !== 'children') {
-        const value = props[prop]
-        domElement[prop] = value
-      }
-    }
-
-    container.appendChild(domElement)
   }
 }
 
